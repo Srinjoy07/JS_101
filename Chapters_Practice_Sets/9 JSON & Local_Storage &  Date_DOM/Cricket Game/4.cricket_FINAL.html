@@ -1,0 +1,126 @@
+<!-- We want to omit that boring pop-up and let the user see the score directly on the screen -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Return</title>
+    <link rel="stylesheet" href="3.Cricket_final.css">
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <button class="choice_button" onclick="
+        let computerChoice = generateComputerChoice(); 
+        resultMsg = getResult('Bat🏏',computerChoice);
+        showResult('Bat🏏',computerChoice,resultMsg);
+    ">
+       <img src="images/bat.png" alt="bat image" class="choice_image">
+    </button>
+
+    <button class="choice_button" onclick="
+        computerChoice = generateComputerChoice();
+        resultMsg = getResult('Ball⚽',computerChoice);
+        showResult('Ball⚾️',computerChoice,resultMsg);
+    ">
+       <img src="images/ball.png" alt="ball image" class="choice_image">
+    </button>
+
+    <button class="choice_button" onclick="
+        computerChoice= generateComputerChoice();
+        resultMsg = getResult('Stump🍡',computerChoice);
+        showResult('Stump🍡',computerChoice,resultMsg);
+    ">
+       <img src="images/stump.png" alt="stump image" class="choice_image">
+    </button>
+    
+    
+
+    <h3 id="user-move"></h3>
+    <h3 id="computer-move"></h3>
+    <h3 id="result"></h3>
+    <h3 id="score"></h3>
+
+    <button onclick="localStorage.clear();  
+        resetScore();
+        location.reload();  //new addition to reload the page as restore is pressed
+    ">Restore♻️</button>
+
+    <script>
+        let scoreStr = localStorage.getItem('Score'); 
+        let score;
+        resetScore(scoreStr);
+
+        function resetScore(scoreStr) {
+            score = scoreStr ? JSON.parse(scoreStr) : {    
+                win : 0,
+                lost: 0,
+                tie: 0,
+            };    
+
+            score.displayScore = function() {
+                return `No of matches Won:${score.win}, Lost:${score.lost}, Tie: ${score.tie}`; 
+            };
+        }
+
+
+        function generateComputerChoice() {
+            let randomNumber = Math.random() * 3;
+            if (randomNumber > 0 && randomNumber <= 1) {
+                return 'Bat🏏';
+            } else if (randomNumber > 1 && randomNumber <= 2) {
+                return 'Ball⚽';
+            } else {
+                return 'Stump🍡';
+            }
+        }
+        
+        function getResult(userMove , computerMove) {
+            if (userMove === 'Bat🏏') {
+                if (computerMove === 'Ball⚽') {
+                        score.win++;  
+                        return 'User Won 🎉🏆';
+                 } else if (computerMove === 'Bat🏏') {
+                        score.tie++;   
+                        return `It's a tie⚔️`;
+                 } else if (computerMove ===  'Stump🍡') {
+                        score.lost++;
+                        return `Computer Won💀`;
+                 }
+            } else if (userMove === 'Ball⚽'){
+                if (computerMove === 'Ball⚽') {
+                        score.tie++;    
+                        return 'Its a tie⚔️';
+                    } else if (computerMove === 'Bat🏏') {
+                        score.lost++;
+                        return `Computer Won💀 `;
+                    } else if (computerMove === 'Stump🍡') {
+                        score.win++;
+                        return `User Won 🎉🏆 `;
+                    }  
+            } else {
+                   if (computerMove === 'Ball⚽') {
+                        score.lost++;
+                        return 'Computer Won💀 ';
+                    } else if (computerMove === 'Bat🏏') {
+                        score.win++;
+                        return `User Won 🎉🏆`; 
+                    } else if (computerMove === 'Stump🍡') {
+                        score.tie++;
+                        return `Its a tie⚔️ `;
+                    }
+            }
+
+        }
+
+        function showResult(userMove, computerMove, result) {
+            localStorage.setItem('Score', JSON.stringify(score));
+            document.getElementById('user-move').textContent = `You chose: ${userMove}`  //or use querselector
+            document.getElementById('computer-move').textContent = `Computer chose: ${computerMove}`
+            document.getElementById('result').textContent = `Cureent result is ${result}`;
+            document.getElementById('score').textContent = `Score: ${score.win} - ${score.lost}`;  //or use displayScore
+            //alert(`You chose ${userMove} and Computer chose ${computerMove} and ${result}.Current score is: ${score.displayScore()}`);
+        }
+
+    </script>
+</body>
+</html>

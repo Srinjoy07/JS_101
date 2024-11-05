@@ -1,0 +1,48 @@
+<!-- Return is used to send a value back from a function
+ Can be returned:Value,variable,calculation,etc.
+ Functon calls make CODE JUMP around  -->
+<!-- Prefers returning value over using Global values -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Statement</title>
+</head>
+<body>
+    <script>
+        //generate random number
+        function generateRandomMove() {
+           let random = Math.random();
+           let randomMove = random * 3;
+           return randomMove;
+        };
+
+        console.log(generateRandomMove()); //returns random Number
+        let randomMove = generateRandomMove(); //can assign it to a variable as well  //we can use this variable AGAIN because previous one was locally assigned 
+        
+        
+
+
+        //function to return a status of drive
+        function determineDriveStatus() {
+            let age = 22;
+            if (age === undefined) {
+                return "Age is not defined"; //if this return works then the rest of function won't work...means if age==undefined the rest won't work
+            }
+            console.log('Checking for driving Status....');
+
+            let status;
+            if (age > 18) {
+                return "You can drive"
+            } else {
+                return 'Use a Bicycle';
+            }
+        }
+
+        console.log(determineDriveStatus());
+
+    </script>
+</body>
+</html>

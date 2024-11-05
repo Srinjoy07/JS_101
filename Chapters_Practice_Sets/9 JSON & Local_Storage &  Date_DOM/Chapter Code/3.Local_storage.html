@@ -1,0 +1,58 @@
+<!--
+ 1.Persistent data storage in the browser
+ 2.setltem: Stores data as key-value pairs.
+ 3.Only strings can be stored
+ 4.getltem: Retrieves data based on key
+ 5.Other methods: localStorage.clear(),removeItem()
+ 6.Do not store SENSITIVE information. Viewable in storage console -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <script>
+        //storing value in Local_Storage
+        localStorage.setItem('NAME' , 'Srinjoy')
+        //to check the key-value...go to Chrome>>Live-Server>>Console>>">>" press>>Application>>Local Storage>>https://127.0.0.1
+        localStorage.setItem('Price' , '87656')
+
+        //shows values
+        console.log(localStorage.getItem('NAME')) //even if you comment the previous lines..it won't go away as they are stored permanently..and even after refresh they will be shown
+
+
+
+        let product = {
+            name: 'T-shirt',
+            price: 789,
+            rating : {
+                stars : 4.5,
+                noOfReviews: 453,
+            },
+        };
+        localStorage.setItem('product',product);
+        console.log(localStorage.getItem('product'));  //doesnt understand and savwes garbage value 
+
+
+        //saving as a string
+        localStorage.setItem('product',JSON.stringify(product));
+        console.log(localStorage.getItem('product'));  //now it shows the stringified object
+
+
+        //bringing the JSON file from storage and making it JS object again
+        let product2 =  JSON.parse(localStorage.getItem('product'));
+        console.log(product2);  //now it shows the object
+
+
+
+        //removing item
+        localStorage.removeItem('Price');
+
+        //removing everything including object as a whole
+        localStorage.clear();
+    </script>
+</body>
+</html>

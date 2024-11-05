@@ -1,0 +1,25 @@
+<!-- Input values that a function takes -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameters</title>
+</head>
+<body>
+    <script>
+        function sum(a, b)  {  //parameters are declared when defining
+            let sum = a + b;
+            return sum;
+        }
+        console.log(sum(5,6));  //argument is the value that is passed
+
+
+        //defining default parameter value
+        function greet( name = 'Pyaree') {
+            console.log(`Namaste ${name} uncle`);
+            }
+        greet();  //name is not passed  to see output
+    </script>
+</body>
+</html>

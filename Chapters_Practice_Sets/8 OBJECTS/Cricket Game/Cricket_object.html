@@ -1,0 +1,107 @@
+<!-- Creating the same Cricket game using return inside function -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Return</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: url('Cricket_3_1727677442716_1727677564058.jpg');
+            background-repeat: no-repeat;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <button onclick="
+        let computerChoice = generateComputerChoice(); 
+        resultMsg = getResult('Bat🏏',computerChoice);
+        showResult('Bat🏏',computerChoice,resultMsg);
+    ">Bat🏏</button>
+
+    <button onclick="
+        computerChoice = generateComputerChoice();
+        resultMsg = getResult('Ball⚽',computerChoice);
+        showResult('Ball⚾️',computerChoice,resultMsg);
+    ">Ball⚾️</button>
+
+    <button onclick="
+        computerChoice= generateComputerChoice();
+        resultMsg = getResult('Stump🍡',computerChoice);
+        showResult('Stump🍡',computerChoice,resultMsg);
+    ">Stump🍡</button>
+
+    <script>
+
+        //object to maintain score
+        let score = {
+            win : 0,
+            lost: 0,
+            tie: 0,
+            //we can declare functions inside an object as well
+            displayScore: function() {
+                return `No of matches Won:${score.win}, Lost:${score.lost}, Tie: ${score.tie}`;
+            }
+        };
+
+        function generateComputerChoice() {
+            let randomNumber = Math.random() * 3;
+            if (randomNumber > 0 && randomNumber <= 1) {
+                return 'Bat🏏';
+            } else if (randomNumber > 1 && randomNumber <= 2) {
+                return 'Ball⚽';
+            } else {
+                return 'Stump🍡';
+            }
+        }
+        
+        //we will get to know if we won or not in this step
+        function getResult(userMove , computerMove) {
+            if (userMove === 'Bat🏏') {
+                if (computerMove === 'Ball⚽') {
+                        score.win++;  //win streak increases
+                        return 'User Won 🎉🏆';
+                 } else if (computerMove === 'Bat🏏') {
+                        score.tie++;   //updating the score is done before returning the message
+                        return `It's a tie⚔️`;
+                 } else if (computerMove ===  'Stump🍡') {
+                        score.lost++;
+                        return `Computer Won💀`;
+                 }
+            } else if (userMove === 'Ball⚽'){
+                if (computerMove === 'Ball⚽') {
+                        score.tie++;    
+                        return 'Its a tie⚔️';
+                    } else if (computerMove === 'Bat🏏') {
+                        score.lost++;
+                        return `Computer Won💀 `;
+                    } else if (computerMove === 'Stump🍡') {
+                        score.win++;
+                        return `User Won 🎉🏆 `;
+                    }  
+            } else {
+                   if (computerMove === 'Ball⚽') {
+                        score.lost++;
+                        return 'Computer Won💀 ';
+                    } else if (computerMove === 'Bat🏏') {
+                        score.win++;
+                        return `User Won 🎉🏆`; 
+                    } else if (computerMove === 'Stump🍡') {
+                        score.tie++;
+                        return `Its a tie⚔️ `;
+                    }
+            }
+
+        }
+
+        function showResult(userMove, computerMove, result) {
+            alert(`You chose ${userMove} and Computer chose ${computerMove} and ${result}.Current score is: ${score.displayScore()}`);
+        }
+
+    </script>
+</body>
+</html>

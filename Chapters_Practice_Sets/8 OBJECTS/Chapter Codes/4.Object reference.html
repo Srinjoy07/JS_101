@@ -1,0 +1,30 @@
+<!-- Objects works based on REFEERENCES, not actual data -->
+<!-- Copying an object copies the reference, not the actual object -->
+<!-- When comparing with == , we're comparing references , not content -->
+<!-- change to one reference affects all copies -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obj_Refrence</title>
+</head>
+<body>
+    <script>
+        let x = {num: 5};
+        let y = x; // copying reference, not actual object
+        console.log(`x=${x.num} y=${y.num}`);
+
+        x = 7;
+        console.log(`x=${x} y=${y.num}`);
+
+
+
+        let p ={pop: 'iujh'};
+        let q = {pop: 'iujh'};
+        console.log(p == q); //answer is FALSE...because even if they look the same object but their memory address are different
+        // to see if two objects are EQUAL...we need to perform DEEP EQUAL TO...which checks every key and pair to see if they are same or not
+    </script>
+</body>
+</html>

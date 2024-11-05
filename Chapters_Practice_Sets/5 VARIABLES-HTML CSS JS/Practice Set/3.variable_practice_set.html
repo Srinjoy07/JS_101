@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Set-Variable</title>
+</head>
+<body>
+    <p id="name-display"></p>
+    <script>
+        const myName = "Srinjoy Ganguly"
+        console.log(myName); //task 1-2
+        //calculate Myntra Bag Price
+        document.querySelector('#name-display').innerText = myName; //displays text from a variable
+
+        const GSTpercentage = 18; //GST percentage
+        let cartValue = Math.round(((15599 - (10/100 * 15599)) - 272 + (2499 - (41/100*2499)) - 29 + 25 + 20) * (100 + GSTpercentage) / 100);
+        console.log(cartValue);
+
+        //eval method----
+        console.log(eval(`90+50*56/23`)); //converts strings to number
+
+    </script>
+</body>
+</html>

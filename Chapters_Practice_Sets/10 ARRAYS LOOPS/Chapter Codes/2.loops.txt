@@ -1,0 +1,7 @@
+Code that runs multiple times based on a condition 
+ Loops also alter the flow of execution similar to function:
+    1.Function": Resuable blocks of code.
+    2. Loops: Repeated execution of a block of code. 
+---Loops automate repetitive task 
+---Iterations: Number of time the code runs
+

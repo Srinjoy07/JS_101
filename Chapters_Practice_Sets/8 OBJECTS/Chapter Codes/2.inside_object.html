@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside Object</title>
+</head>
+<body>
+     <script>
+        let product = {
+            company: 'Mango',
+            itemName: 'Cotton stripped t-shirt',
+            price: 861,
+            rating: {
+                stars: 4.5,
+                noOfReviews: 87
+            },
+            //function inside an object is called a METHOD
+            displayPrice: function() {
+                return `${this.price.toFixed(2)}`;  //this is a keyword referring to the object itself...when called inside the object itself
+            }
+        }
+     </script>
+</body>
+</html>

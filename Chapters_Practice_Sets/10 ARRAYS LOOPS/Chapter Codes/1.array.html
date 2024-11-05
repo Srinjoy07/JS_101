@@ -1,0 +1,82 @@
+<!-- An array is just a list of values.
+     Index: starts at 0.
+     Arrays are used for storing multiple values in a single variable.-->
+
+<!-- array is also an OBJECT -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        
+        // Declare an array
+        let colors = ["red", "green", "blue", "yellow", "purple",1,8,null,undefined,[0,1,1,2,3,5,8,13]]; //can store any value including another array
+        console.log(colors);
+        console.log(colors[2]); //gives the third element
+        console.log(colors.length); //gives the number of elements in the array
+        console.log(colors.indexOf("green")); //gives the index of the first occurrence of the specified
+        console.log(colors.slice(0,colors.length).reverse());  //reverse using slice
+        console.log(colors.slice(1, 4)); //gives the elements from index 1 to (n-1) element
+        console.log(colors.slice(-3)); //gives the last 3 elements
+
+        console.log(Array.isArray(colors));  //checks if it is an array
+
+
+
+        let numbers = [3,5,7,5,2,4];
+
+        //performing operation at the rear end of array
+        numbers.push(8);  //add a num
+        console.log(numbers); 
+        numbers.pop();    //removes a num
+        console.log(numbers);
+        console.log('popped '+numbers.pop());  //concatination while performing task
+        
+
+        //performing operation at the starting end of array
+        const fruits = ['apple','banana','cherry'];
+        const removedFruit = fruits.shift();
+        console.log(removedFruit); //op:apple
+        console.log(fruits); //op:banana,cherry
+        fruits.unshift("Mango", "Grapes");
+        console.log(fruits); // Output: ["Mango", "Grapes", "Banana",'Grapes']
+
+
+        //deleting or altering multiple item inside array
+        let arr = [3,5,7,5];
+        console.log(arr);
+        arr.splice(1,0,2); //insert 2 at index 1...deleting 0 item
+        console.log(arr); //op:3,2,5,7,5
+        arr.splice(1,2); //delete 2 item from index 1..deletes 5,7
+        
+
+
+        let arr_1 = [3,4,5,6];
+        console.log(arr_1.toString()); //op:3,4,5,6 without the "" mark
+
+
+        
+        let arr_2 = [3,8,4,2,5,7,9,1];
+        console.log(arr_2.sort()); //sorts the array in ascending order
+        console.log(arr_2.reverse()); //sorts the array in descending order
+
+
+        let arrCopy = arr_2.valueOf(); //copy of arr_2 array
+        console.log(arrCopy); //op:[9, 8, 7, 5, 4, 3, 2, 1]
+
+
+        //De-structuring of array
+        let [a,b,c,d,e,f,g,h] = arr_2; //assigning keys to elements of array..like assigning properties for Object
+        console.log(a + ' ' + b + ' ' + c + ' ' + d + ' ' + e + ' ' + f + ' ' + g + ' ' + h + ' ');
+
+        //array join
+        let arr_3 = ['apple','banana','cherry'];
+        console.log(arr_3.join(' ')); //op:apple banana cherry..it is called glue>>the " "
+    </script>
+</body>
+</html>

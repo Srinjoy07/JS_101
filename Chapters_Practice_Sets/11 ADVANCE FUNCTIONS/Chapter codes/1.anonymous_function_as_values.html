@@ -1,0 +1,35 @@
+<!-- Functions in JS are first-class citizens; they can be assigned to variables-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymus Function</title>
+</head>
+<body>
+    <script>
+        // Anonymus Function
+        // Anonymus Function is a function without a name
+        // It is used when we need to use a function only once
+        // It is used when we need to pass a function as an argument to another function
+        let sum = function(num1, num2) {
+            return num1 + num2;
+        }
+        let newSum = sum;
+
+        console.log(sum(4,5));
+        console.log(newSum(4,5)); 
+
+
+        //passing a function as a argument for another function
+        let sumThreeNumbers = function(num1, num2, num3, sumTwoNumbers) {
+           let sum1 = sumTwoNumbers(num1, num2);
+           return sum1 + num3;
+        }
+        console.log(sumThreeNumbers(4,5,6, sum)); //passing sumOfTwoNumbers as sum
+        console.log(sumThreeNumbers);
+        console.log(typeof sumThreeNumbers);
+    </script>
+</body>
+</html>

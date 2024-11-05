@@ -1,0 +1,36 @@
+<!-- Break lets you stop a loop early,or break out of a loop -->
+<!-- Continue is used to skip one iteratiion or the current iteration -->
+<!-- In while loop remember to do the incremenet manually before using continue -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break_Continue</title>
+</head>
+<body>
+    <script>
+        //Break statement
+        for (let i = 0; i < 10; i++) {
+            if (i == 5) {
+                break;  //nothing after 5 is printed
+                console.log("This will not be printed");
+                }
+            console.log(i);
+            }
+        console.log("Loop ended");
+
+
+        //Continue statement
+        for (let i = 0; i < 10; i++) {
+            if (i == 5) {
+                console.log(`This will not be printed ${i}`);
+                continue;  //only 5 will be skipped
+                }
+            console.log(i);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- Used for non-standard conditions
+     Repeatiing a block of code while a condition is true.
+     Remember: Always include an update to avoid infinite loops -->
+<!-- Syntax:
+         while (condition) {
+             //Body of the loop
+         } -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While Loop</title>
+</head>
+<body>
+    <script>
+        let num = 1;b         //initialization
+        while (num <= 10) {   //condition
+            console.log(num);
+            num++;            //updating  //if not given runs infinite loop
+        }
+
+        cnsole.log(`final value of num is : ${num}`)  //ends on 11...because that's the value for which while loop is broken
+    </script>
+</body>
+</html>

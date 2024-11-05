@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Alternative</title>
+</head>
+<body>
+    <script>
+        //Ternary Operator=  condition?trueValue:falseValue   //quick one-line if-else
+        let age = 21;
+        let message = (age >= 18) ? "You are an adult" : "You are a kid";
+        console.log(message);
+
+        //Guard Operator= value||defaultValue   //used when a fallback value is needed
+        let age_2 = 32;
+        let finalAge = age_2 || 18; //here if anybody doesn't provide an age then we can take 18 as a default
+        console.log(age_2);
+        console.log(finalAge)
+
+        //Default Operator= value??  //Used when you want to consider only null and undefined as falsy
+        let age_3;   //final age isn't given so it'll take up the default value it is provided   
+        //but it'll take 0 as a value..which isn't possible using Guard Opt.
+        let finalAge_2 = age_3 ?? 18;
+        console.log(age_3);
+        console.log(finalAge_2); 
+
+    
+
+    </script>
+</body>
+</html>

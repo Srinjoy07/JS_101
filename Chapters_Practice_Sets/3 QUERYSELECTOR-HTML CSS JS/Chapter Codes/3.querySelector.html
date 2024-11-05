@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector-JS</title>
+</head>
+<body>
+    <h1>Hello There,This is JS Lesson</h1>
+    <button id="click-me">Click Me</button> <br>
+    <Button class="my-button">Push Me</Button><br>
+    <Button class="my-button">Push Me 2</Button>
+    <hr>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi quia at quis dolor voluptates odio deleniti maxime, molestias dolore minima a esse provident pariatur ut doloremque animi? Laudantium eius quia omnis ea, ipsam totam aliquid dolores nisi alias iusto dolore voluptate labore, similique culpa enim rem ullam tenetur modi molestias!
+    </p>
+
+    <a href="https://www.google.com" target="_blank">Go to Google</a> <!--_black opens next page for the website to open-->
+
+
+    <!-- SCRIPT is written inside BODY tag 
+     Basically the ideology is to load the whole HTML code then JS to work on it-->
+    <script>
+        //we wrote the codes in console..here it is just copy paste
+        
+        //OLD SELECTIONS
+        //getting element by id--Button
+        document.getElementById('click-me').click()  //function of click
+        
+        //class selection
+        document.getElementsByClassName('my-button')
+
+
+        //NEW SELECTIONS
+        //queryselector finds first element that matches a CSS selector
+        document.querySelector('h1') //directly selects elements 
+        document.querySelector('#click-me') //directly selects elements, .class for classes
+
+        //selects all query
+        document.querySelectorAll('.my-button')
+
+       alert("Hurray we did it");
+       console.warn('This is a warn');
+       console.error('This is an error message');
+       console.clear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!-- 
+ Task 1: Display good morning, afternoon and night based on current hour
+ Task 2: Add the name to the output too
+ Task 3: Create a Button which shows the number how many items have been pressed.
+     -Also, it has different colors for when it has beem pressed odd or even times
+     - The click count should also survive browser refresh -->
+<!-- Use LocalStore.clear() in console before shutting off -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Set</title>
+    <style>
+         #my-button {
+            height: 50px;
+            width: 50px;
+            font-size: 25px;
+            border: none;
+            border-radius: 5px;
+         }
+         .js-odd {
+            background-color: red;
+         }
+         .js-even {
+            background-color: blue;
+         }
+    </style>
+</head>
+<body>
+    <h3 id="greeting"></h3>   <!-- task1 -->
+
+    <button id="my-button" onclick="buttonPressed();"></button> <!--task 3-->
+    <script>
+        //task 1-2
+        function doGreeting(personName = 'Dear') {  //dear is default value
+            let date = new Date();
+            let hours = date.getHours();
+            //let hours = 20;
+            let heading = document.querySelector('#greeting');
+      
+            if (hours > 5 && hours < 12) {
+              heading.innerText = `Good Morning ${personName}`;
+            } else if (hours > 12 && hours < 18) {
+              heading.innerText = `Good Afternoon ${personName}`;
+            } else {
+              heading.innerText = `Good Night ${personName}`;
+            }
+          }
+      
+          doGreeting('Srinjoy');
+
+
+        // Task 3
+        let noOfTimesClicked = localStorage.getItem('noOfTimesClicked') || 0; //if there is no previously then show or restart from 0
+        function buttonPressed() {
+            noOfTimesClicked++;
+            localStorage.setItem('noOfTimesClicked', noOfTimesClicked);
+            updateButton(); //updates button everytime its clicked
+        }
+
+        function updateButton() {
+            let button = document.getElementById('my-button');
+            if(noOfTimesClicked % 2 === 0) {
+                button.classList.remove('js-odd');
+                button.classList.add('js-even');
+            } else {
+                button.classList.add('js-odd');
+                button.classList.remove('js-even');
+            }
+            button.innerText = noOfTimesClicked;
+        }
+
+        updateButton();
+
+                
+    </script>
+</body>
+</html>

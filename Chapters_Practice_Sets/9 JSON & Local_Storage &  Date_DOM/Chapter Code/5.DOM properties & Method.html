@@ -1,0 +1,51 @@
+<!-- DOM and Element Properties 
+     1.location
+     2.title
+     3.href
+     4.domain
+     6.innerHTML
+     7.innerText
+     8.classList -->
+<!-- DOM and Element Methods
+     1.getElementById()
+     2.querySelector()
+     3.classList: add(), remove()
+     4.createElement()
+     5.appendChild()
+     6.removeChild()
+     7.replaceChild()
+      -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 class="title1">Hello, World!</h1>
+    <div class="my_div">This is my div</div>
+    <script>
+        document.location //shows the port of the file
+
+        document.title; //shows title
+        document.title = 'Srinjoy'; //changes the title
+
+        document.domain;  //gives the domain name
+
+        document.classList; //gives all the classes
+        document.querySelector('title1').classList.add('my title'); //add a class to it
+
+        let button = document.createElement('button'); //can create an element here
+
+        button.textContent = 'Click me'; //can add text to it
+        document.querySelector('.my_div').appendChild(button); //now it will add a button inside the div
+        
+        
+        
+
+    </script>
+</body>
+</html>

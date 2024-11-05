@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Set 4</title>
+    <style>
+        .bag-button {
+            height: 50px;
+            width: 20%;
+            border: none;
+            border-radius: 10px;
+            background-color: lightgreen;
+            margin: 6px;
+            padding: 5px 15px;
+        }
+        .wishlist {
+            height: 50px;
+            width: 20%;
+            border: none;
+            border-radius: 10px;
+            background-color: yellow;
+            margin: 6px;
+            padding: 5px 15px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <button class="bag-button" onclick="cartQuantity++;
+    document.querySelector('#cart-summary').innerText = `Your Bag has ${cartQuantity} items`">Add to bag👜</button>   <!-- we also need to update the value here as well in order to show it in the cart value -->
+    <button class="wishlist" onclick="cartQuantity--;
+    document.querySelector('#cart-summary').innerText = `Your Bag has ${cartQuantity} items`">Move To Wishlist</button>  <!--  because in wishlist the item is taken from cart-->
+    <button class="bag-button" onclick="cartQuantity += 2;
+    document.querySelector('#cart-summary').innerText = `Your Bag has ${cartQuantity} items`">Add 1+1 Sale item</button> 
+
+    <h1 id="cart-summary">Your Bag Has 0 items</h1>
+
+    <script>
+        let cartQuantity = 0;
+        //changes the no of items added to cart
+        document.querySelector('#cart-summary').innerText = `Your Bag has ${cartQuantity} items`  //innerText changes the text
+
+    </script>
+</body>
+</html>

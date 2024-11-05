@@ -1,0 +1,42 @@
+<!-- Functions for executing code asynchronously after a delay
+ --setTimeout runs once; setInterval runs repeatedly
+ ---setTimeout:
+        syntax: setTimeout(function,time)
+        cancel: clearTimeout(timerID)
+ ---setInterval:
+        syntax: setinterval(function,time)
+        cancel: clearInterval(intervalID) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout & Interval</title>
+</head>
+<body>
+    <script>
+        // setTimeout-----------------------
+        let alarm = () => console.log(`Hello, World!.Today is ${new Date()}`);
+        let timerID = setTimeout(alarm, 3000); //this is in milisecond...hence 3 second  
+        console.log(`Alarm set with timerID: ${timerID}`);
+
+        //clear timeout
+        clearTimeout(timerID); //this timer will never happen because of this
+
+
+
+
+
+
+
+        // setInterval-----------------------
+        let intervalID = setInterval(alarm , 1000);
+        
+        console.log(`Alarm set with intervalID: ${intervalID}`);
+        setTimeout( () => clearInterval(intervalID) ,5000)  //this will stop the alarm from ringing after 5 seconds
+        
+
+    </script>
+</body>
+</html>

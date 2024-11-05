@@ -1,0 +1,43 @@
+<!-- A pattern to ACCUMULATE VALUES through looping
+ # The pattern is:
+ #   1. Initialize a variable to hold the accumulated value
+ #   2. Loop through the data, adding each value to the accumulated value
+ #   3. Return the accumulated value
+ Common Scenario:  sums all the number in an array
+                   create a modified copy of an array
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accumulator</title>
+</head>
+<body>
+    <script>
+        // Define an array of numbers
+        let numbers = [ 3, 4, 5, 8];
+        let sum = 0;
+        
+        for(let i = 0; i < numbers.length; i++) {
+            sum += numbers[i]; //updates sum with it's value...sum = sum + num[i]
+        }
+        console.log(`Sum of the array is ${sum}`);
+        console.log(numbers);
+
+        
+
+
+        // creating a new modified array
+        let squares = [];
+        for (let i = 0; i < numbers.length; i++) {
+            //squares[i] = numbers[i] * numbers[i];  //this is generic way
+            squares.push(numbers[i] * numbers[i]); //this is more advanced way
+
+            //replacing each index with sqaures
+        }
+        console.log(squares);
+    </script>
+</body>
+</html>

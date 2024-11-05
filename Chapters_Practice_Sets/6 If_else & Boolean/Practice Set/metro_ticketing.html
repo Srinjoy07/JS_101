@@ -1,0 +1,69 @@
+<!--  
+  1.Give discount based on age,gender for metro ticket
+  -Females get 50% off
+  -Kids under 5 years of age are free
+  -Kids upto 8 years have half ticket
+  -People over 65 years of age only pay 30% of the ticket
+  -In case of multiple discounts max discount apply-->
+<!-- if-else ladder used -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro ticket</title>
+</head>
+<body>
+    <script>
+      /*    MY CODE----
+      let age = prompt("Your age is: ");
+
+      let gender = prompt("Your gender is: ");
+
+      let ticketPrice = eval(prompt("Ticket fare you want to choose is: "));
+      
+      //for Female
+      if(gender.toLowerCase() === "female"){
+        if (age <= 5) {
+          console.log(`Your ticket is free`);  //free
+        } else if (age>5 && age<=8) {
+          console.log(`Your ticket price is ${ticketPrice/2}`);  //50%
+        } else if (age>=65 ) {
+          console.log(`Your ticket price is ${ticketPrice-(ticketPrice*0.3)}`);
+        } else {
+          console.log(`Ticket price for female is ${ticketPrice-(ticketPrice*0.5)}`); //30%
+        }
+      }
+      
+      //for Male
+      else if(gender.toLowerCase() === "male"){ 
+        if (age <= 5) {
+          console.log(`Your ticket is free`);  //free
+        }
+        else if (age>5 && age<=8) {
+          console.log(`Your ticket price is ${ticketPrice/2}`);  //50%
+        }
+        else if (age>=65) {
+          console.log(`Your ticket price is ${ticketPrice-(ticketPrice*0.3)}`);
+        }
+      }
+        */
+        let age = 25;
+        let gender = 'female' //male and female
+        let finalDiscount;
+
+        if (age <= 5) {
+          finalDiscount = 100;  //free
+        } else if (gender === 'female' || age<=8) {
+          finalDiscount = 50;
+        } else if (age >= 65) {
+          finalDiscount = 30;
+        } else {
+          finalDiscount = 0;
+        }
+
+        console.log(`Your final discount is ${finalDiscount}`);
+    </script>
+</body>
+</html>

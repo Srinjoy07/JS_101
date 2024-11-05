@@ -1,0 +1,98 @@
+<!-- Creating the same Cricket game using return inside function -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Return</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: url('Cricket_3_1727677442716_1727677564058.jpg');
+            background-repeat: no-repeat;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <button onclick="
+        //generating computer choice based on BAT
+        let computerChoice = generateComputerChoice(); 
+        //getting result  
+        resultMsg = getResult('Bat🏏',computerChoice);
+        //result message
+        showResult('Bat🏏',computerChoice,resultMsg);
+    ">Bat🏏</button>
+
+    <button onclick="
+        //generating computer choice based on BALL
+        computerChoice = generateComputerChoice();
+        //getting result  
+        resultMsg = getResult('Ball⚽',computerChoice);
+        //result message
+        showResult('Ball⚾️',computerChoice,resultMsg);
+    ">Ball⚾️</button>
+
+    <button onclick="
+        //generating computer choice based on STUMP
+        computerChoice= generateComputerChoice();
+        //getting result
+        resultMsg = getResult('Stump🍡',computerChoice);
+        //result message
+        showResult('Stump🍡',computerChoice,resultMsg);
+    ">Stump🍡</button>
+
+    <script>
+        //generating Computer choice
+        function generateComputerChoice() {
+            let randomNumber = Math.random() * 3;
+            if (randomNumber > 0 && randomNumber <= 1) {
+                return 'Bat🏏';
+            } else if (randomNumber > 1 && randomNumber <= 2) {
+                return 'Ball⚽';
+            } else {
+                return 'Stump🍡';
+            }
+        }
+
+        //checks result
+        function getResult(userMove , computerMove) {
+            if (userMove === 'Bat🏏') {
+                if (computerMove === 'Ball⚽') {
+                    return 'User Won 🎉🏆';
+                 } else if (computerMove === 'Bat🏏') {
+                    return `It's a tie⚔️`;
+                 } else if (computerMove ===  'Stump🍡') {
+                    return `Computer Won💀`;
+                 }
+            } else if (userMove === 'Ball⚽'){
+                if (computerMove === 'Ball⚽') {
+                    return 'Its a tie⚔️';
+                    } else if (computerMove === 'Bat🏏') {
+                    return `Computer Won💀 `;
+                    } else if (computerMove === 'Stump🍡') {
+                    return `User Won 🎉🏆 `;
+                    }  
+            } else {
+                //userMove === Stump🍡
+                   if (computerMove === 'Ball⚽') {
+                    return 'Computer Won💀 ';
+                    } else if (computerMove === 'Bat🏏') {
+                    return `User Won 🎉🏆`;
+                    } else if (computerMove === 'Stump🍡') {
+                    return `Its a tie⚔️ `;
+                    }
+            }
+
+        }
+        
+        //generates result message
+        function showResult(userMove, computerMove, result) {
+            alert(`You chose ${userMove}. Computer chose ${computerMove} and ${resultMsg}`);
+        }
+
+    </script>
+</body>
+</html>

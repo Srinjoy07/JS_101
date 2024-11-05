@@ -1,0 +1,84 @@
+<!--
+1.Create a variable multiply and assign a function to this variable that multiplies two numbers.Call this method from the variable.
+2.Create a function runtwice that takes a function as a parameter and then runs that method twice.
+3.Create a button which should grow double in size on clicking after 2 seconds.
+4.in the above exercise ad the behaviour using an event listener of onclick.
+5.Create a function that sums an array of numbers.Do this using forEach loop.
+6.Create a function that takes an array of numbers and return their squares using map function.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice set</title>
+    <style>
+        .my-button{
+            font-size: 15px;
+            height: 20px;
+            width: 80px;
+            background-color: rgb(221, 49, 22);
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        .js-size-double{
+            font-size: 30px;
+            height: 40px;
+            width: 160px;
+            background-color: rgb(221, 49, 22);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            /*transition: 2s;   we can use this transition to make the button bigger when clicked..rather than setting a timeout in JS*/ 
+        }
+    </style>
+</head>
+<body>
+    <button class='my-button' onclick="
+        setTimeout(doubleTheSize,2000);">Click Me</button> <!--task3-->
+    <script>
+        
+        //task 1
+        let multiply = (a, b) => a * b;
+        console.log(multiply(5, 6));
+
+
+        //task 2
+        let func = () => console.log("Hello");
+        let runtwice = inputFunction => {
+            inputFunction();
+            inputFunction();
+        };
+        runtwice(func);
+       
+        
+        //task 3
+        function doubleTheSize() {
+            let buttonElement = document.querySelector('.my-button');
+            buttonElement.classList.add('js-size-double'); //adds this class extra to the previous button and thus the property is added onto it...don't add .js-size-double!!...just normally
+
+            
+            //task 4
+            //the size of button will grow and set back to original size
+            buttonElement.addEventListener('click',func = () => buttonElement.classList.remove("js-size-double"));
+        }
+
+         
+        
+        //task 5
+        let arr = [1,2,3,4,5,6,7,8,9];
+        let sum = 0;
+        arr.forEach(num => sum+= num);
+        console.log(sum);
+        
+        
+        //task 6
+        let arr2 = [1,2,3,4,5,6,7,8,9];
+        let squares = arr.map(num => num * num);
+        console.log(squares);
+        
+    </script>
+</body>
+</html>

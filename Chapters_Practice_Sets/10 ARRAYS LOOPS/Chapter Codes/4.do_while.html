@@ -1,0 +1,28 @@
+<!-- Executes block first, then checks the condition
+     Guaranteed to run at leasr one iteration
+     unlike while, first iteration is unconditional -->
+<!-- Syntax:
+         do {
+              //Body of the loop
+         }
+         while (condition) ;
+         -->
+
+         <!DOCTYPE html>
+         <html lang="en">
+         <head>
+             <meta charset="UTF-8">
+             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <title>Do-While Loop</title>
+         </head>
+         <body>
+             <script>
+                let num = 0;          //initialization
+                do {     
+                    console.log(num);
+                    num++;            //updating
+                }
+                while (num < 5);  //even if we write num>0...still it'll print 0
+             </script>
+         </body>
+         </html>

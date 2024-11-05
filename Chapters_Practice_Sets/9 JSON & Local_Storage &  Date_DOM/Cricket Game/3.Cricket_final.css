@@ -1,0 +1,19 @@
+body {
+    text-align: center;
+    background-image: url('images/Cricket_3_1727677442716_1727677564058.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover
+}
+.choice_button {
+    height: 100px;
+    width: 100px;
+    border: none;
+    margin: 10px;
+    background-color: rgb(94, 169, 112);
+    border-radius: 50px;
+    cursor: pointer;
+}
+.choice_image {
+    height: 55px;
+}

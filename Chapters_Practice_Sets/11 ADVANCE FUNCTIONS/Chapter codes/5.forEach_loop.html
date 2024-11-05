@@ -1,0 +1,35 @@
+<!-- 
+1.A method for array iteration, often preferred forreadibility
+2.Parameters: One of the item,optional second for index.
+3.Using return is similar to continue in traditional loops
+4.Not straightforward to break out of a forEach loop
+5.When you need to perform an action on each array element and don't need to break early
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach Loop</title>
+</head>
+<body>
+    <script>
+         
+        //forEach loop
+        let foods = ['bread','rice','meat','pizza'];
+
+        foods.forEach(function(food) {  //food is the index now
+            console.log(food);
+        } );
+
+        foods.forEach(food => console.log(food));  //can be written this way as well
+
+
+
+
+        //for cases where we need to run the loop for shortest time and return the statement fast...we should opt for FOR loop...
+        //because forEach works like: it works like continue...suppose if we are using a searching for 5 in a array from 0 to 10...then it will skip 5 and see every other element
+    </script>
+</body>
+</html>

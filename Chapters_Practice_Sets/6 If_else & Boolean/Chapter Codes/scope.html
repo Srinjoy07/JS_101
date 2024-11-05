@@ -1,0 +1,26 @@
+<!-- basically scope is like GLOBAL,LOCAL variable--
+ VAR doesn't follow scope...whereas LET is locally available -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <script>
+        //let variable can change inside loops so the variable value remains undefined or, when it gets a value somewhere in loop it takes the value as so
+        //VAR doesn't follow it so it isn't used nowadays
+        
+        let userMessage; //declaring a let outside as a global variable and not using let inside loop will make the LET versatile and reuse the value of LET used outside
+        let age = 34;
+        if (age > 18) {
+           userMessage = 'You can drive'; 
+        } else {
+           userMessage = 'You cannot drive';
+        }
+        console.log(userMessage);  //this won't work because let doesn't work outside the statement
+    </script>
+</body>
+</html>

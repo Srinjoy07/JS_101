@@ -1,0 +1,28 @@
+<!-- a consise way to write anonymous functions.
+ For Single Line: Curly brackets and return optional
+ Often used when passing function as an argument -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <script>
+        // Single Line Arrow Function(Lambda function)
+        let sum = (num1, num2) => {   //arguments are written alone..no need to write function
+           return num1+num2;
+        }
+        console.log(sum(6,8));
+
+
+        //for single argument
+        let square = num => num*num;
+
+        //for single line
+        let cube = num => num*num*num;    //no return and no curly braces
+    </script>
+</body>
+</html>

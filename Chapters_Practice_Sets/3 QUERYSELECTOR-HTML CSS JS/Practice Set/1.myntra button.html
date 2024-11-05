@@ -1,0 +1,59 @@
+<!-- 
+ Task-1: Create a button with text click
+ Task-2: Create 2 buttons with class and id
+ Task-3: Create a paragraph
+ Task-4: Add colors to two buttons
+ Task-5: Add proper html structure
+ Task-6: Change page title
+ Task-7: Try to make "Add to Bag" and "❤️wishlist" button with rounded edge
+ Task-8: Add script element to page to show welcome alert
+ Task-9: Add onclick alert on "Add to Bag" and "❤️wishlist" buttons-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Set 3</title>
+    <style>
+        #id-button {
+            color: blue;
+        }
+        .class-button {
+            color: red;
+        }
+        #bag-button {
+            height: 50px;
+            width: 20%;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(17, 230, 17);
+            margin: 6px;
+            padding: 5px 15px;
+        }
+        #wishlist {
+            height: 50px;
+            width: 20%;
+            border: none;
+            border-radius: 10px;
+            background-color: yellow;
+            margin: 6px;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <button>Click</button> <br>
+    <button id="id-button">ID button</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi corporis at ratione placeat tempora aliquid reiciendis voluptate magni vero cumque asperiores veniam maxime, sapiente dolorem provident fuga adipisci deserunt nam, consectetur, officia repudiandae incidunt unde qui a! Architecto omnis optio dicta, repellat nisi aliquam. Ut a aspernatur sequi animi facilis.</p>
+    <br>
+    <button class="class-button">CLASS button</button>
+    <br>
+    <!-- Task 7-9 -->
+    <button id="bag-button" onclick="alert(`Added to bag👜`)">Add to bag👜</button> 
+    <button id="wishlist" onclick="alert(`Added to ❤️Wishlist`)">❤️Wishlist</button>
+    <script>
+        alert(`Welcome!!`)
+    </script>
+</body>
+</html>

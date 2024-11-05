@@ -1,0 +1,96 @@
+<!-- 
+ 1.Create object to represent a product from Myntra
+ 2.Create an object with two references and log changes to one object by changing the other one
+ 3.Use bracket notation to display delivery-time
+ 4.Given an object {message: 'good job' , status: 'complete'}, use de-structuring to create two variables message and status
+ 5.Add function isIdenticalProduct to compare two product objects -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Set - Object</title>
+</head>
+<body>
+    <script>
+        // Task 1
+        let product = {
+            name: 'Myntra',
+            size: 'S',
+            fit: 'Slim-fit',
+            'delivery-time': '07/11/24',
+        };
+
+
+
+        // Task 2
+        let copyProduct = product;
+        console.log(product);
+        copyProduct.size = 'M'; //changing object to see if the original product changes
+        console.log(product);
+        copyProduct.size = 'L';
+        console.log(product);
+
+
+
+        // Task 3
+        console.log(product["delivery-time"]);
+
+
+
+        // Task 4
+        let obj = {
+            message: 'good job',
+            status: 'complete'
+        };
+        console.log(obj);
+        //de-structuring
+        let {message, status} = obj;
+        console.log(message);
+        console.log(status);
+
+
+        // Task 5
+        function isIdenticalProduct(product1, product2) {
+            //checking if the entered products are valid or not
+            if (typeof product1 !== 'object' || typeof product2 !== 'object') {
+                console.warn("Parameter passed was not an object");
+                return false;
+            }
+
+            if (product1 == product2) {
+                return true;
+            } 
+            
+            if (product1.name === product2.name && product1.size === product2.size && product1.fit === product2.fit) {
+                return true;
+            } else {
+                return false;
+            }
+            
+        }
+
+        let product2 = {
+            name: 'Myntra',
+            size: 'S',
+            fit: 'Slim-fit',
+            'delivery-time': '07/11/24',
+        };
+
+        let product3 = {
+            name: 'Myntra',
+            size: 'S',
+            fit: 'Slim-fit',
+            'delivery-time': '07/11/24',
+        };
+        
+        console.log(isIdenticalProduct(product2,''));
+        console.log(isIdenticalProduct(product,product));
+        console.log(isIdenticalProduct(product2,product));  //it is showing false because of Task 2,where we changed the FIT
+        console.log(isIdenticalProduct(product3,product2));
+        console.log(isIdenticalProduct(product2,product3));
+
+    </script>
+</body>
+</html>

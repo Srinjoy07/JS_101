@@ -1,0 +1,118 @@
+<!-- 
+ 1.Create an array of numbers [5,6]. Add 4 at the beginning and 7 at the end of the array
+ 2.Create a method to return an element at a articular position in an array
+ 3.Create an array copy using slice method
+ 4.Create a while loop that exists after counting 5 prime numbers
+ 5.Modify the above loop to finish using break;
+ 6.Create a for loop that prints number 1 to 10 in reverse order.
+ 7.Using continue, only print positive numbers from the given array [1,-6,5,7,-98]
+ 8.Using accumulator pattern concatinate all the strings in the given array ['Christiano','Ronaldo','is','the','GOAT']. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Set</title>
+</head>
+<body>
+    <script>
+        
+        //1.Create an array of numbers [5,6]. Add 4 at the beginning and 7 at the end
+        let numbers = [5, 6];
+        numbers.unshift(4);
+        numbers.push(7);
+        console.log(numbers)
+        
+
+        //2.Create a method to return an element at a articular position in an array
+        let arr = [4,5,6,7];
+        function getElementAtPosition(arr, position) {
+            if (position < arr.length) {
+                return arr[position];
+            } else {
+                return "Position out of range";
+            }
+        }
+        console.log(getElementAtPosition(arr, 2));
+
+
+        //3.Create an array copy using slice method
+        let numbers_1 = [5, 6,7,8,9,3,4];
+        let copy = numbers.slice(0,numbers_1.length);
+        console.log(copy);
+
+
+        //4.Create a while loop that exists after counting 5 prime numbers
+        function isPrime(num) {
+            for(let i=2; i<num; i++) {
+                if(num % i === 0) {  //is divisible by a number lower thn the number itself
+                    return false; 
+                } 
+            }
+            return true; //if no divisors found, it's prime
+        }
+
+        let num = 2;
+        let i = 0;
+        while (i < 5) {
+            if (isPrime(num)) {
+                console.log(num);
+                i++;  //only updates when prime no is found
+            }
+            num++;  //starts from 0 to required steps
+        }
+
+
+        //5.use break
+        function isPrime(num_2) {
+            for(let i_2=2; i_2<num_2; i_2++) {
+                if(num_2 % i_2 === 0) {  //is divisible by a number lower thn the number itself
+                    return false; 
+                } 
+            }
+            return true; //if no divisors found, it's prime
+        }
+
+        let num_2 = 2;
+        let i_2 = 0;
+        while (true) {
+            if (isPrime(num)) {
+                console.log(num);
+                i_2++;  
+                if (i_2 >= 5) {    //using break
+                    break;
+                }
+            }
+            num_2++;  
+        }
+
+        
+        
+
+        //6.Create a for loop that prints number 1 to 10 in reverse order
+        for (let i=10; i>= 1; i--) {
+            console.log(i);
+        }
+        
+            
+        //7.Using continue, only print positive numbers from the given array [1,-6,5,7,-98]
+        let numbers_3 = [1, -6, 5, 7, -98];
+        for (let i = 0; i < numbers_3.length; i++) {
+            if (numbers_3[i] < 0 ) continue;
+            console.log(numbers_3[i]);
+        } 
+        
+        
+        //8.Using accumulator pattern concatinate all the strings in the given array ['Christiano','Ronaldo','is','the','GOAT']
+        let goat = ['Christiano', 'Ronaldo', 'is', 'the', 'GOAT'];
+        let accumulator = '';
+        for (let i = 0; i < goat.length; i++) {
+           accumulator += goat[i] + ' ';
+        }
+        console.log(accumulator);
+        
+        
+    </script>
+</body>
+</html>

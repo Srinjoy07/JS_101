@@ -1,0 +1,50 @@
+<!--
+1.Filter method:
+    • Syntax: array.filter((value,index) => return true/false)
+    • Use: Filters elements based on condition.
+Ex: [🐮,🥔,🐓,🌽].map(cook) => [🍔,🍟,🍗,🥡]
+//transforms the state  -->
+<!--
+1.Map method:
+    • Syntax: array.map((value) => return newValue)
+    • Use: Transforms each element
+Ex: [🍔,🍟,🍗,🥡].filter(isVegeterian) => [🍟,🥡]  //filters food for vegeterian
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter & Map</title>
+</head>
+<body>
+    <script>
+        // Filter method
+        let arr = [1,2,3,4,5,6,7,8,9];
+        let odds = arr.filter((num,index) => {
+            if(num % 2 === 1) {
+                return true;
+                } else {
+                return false;
+            }
+        });
+        console.log(odds);
+        //making it optimised
+        let newOdds = arr.filter(
+            (num,value) => num % 2 === 1 );
+        console.log(newOdds);
+
+
+
+
+
+
+        // Map method
+        let array = [1,2,3,4,5];
+        let squares = array.map(num => num*num);  //returns the squares
+        console.log(squares);
+
+    </script>
+</body>
+</html>

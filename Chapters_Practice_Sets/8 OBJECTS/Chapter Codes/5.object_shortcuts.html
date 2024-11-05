@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Shortcuts</title>
+</head>
+<body>
+    <script>
+        //De-structuring
+        let product = {
+            company: 'Mango',
+            price: 861,
+            'item-name': 'T-shirt',
+        };
+        let {company,price} = product;
+        console.log(company);  //without using DOT notation we can individually assign one variable to one property of an object  
+        //Same as---  let company = product.company
+        console.log(price);
+
+
+
+       
+        //Property shorthand..simplifies to just message
+        let price2 = 861;
+        let product2 = {
+            company: 'Mango',
+            itemName: 'Cotton stripped t-shirt',
+            price2 : price2,
+        };
+        //is same as 
+        let product2_new = {
+            company: 'Mango',
+            itemName: 'Cotton stripped t-shirt',
+            price,
+        };
+
+
+
+        //Method Shorthand
+        let product3 = {
+            company: 'Mango',
+            itemName: 'Cotton stripped t-shirt',
+            displayPrice: function() {
+                console.log(`The price is ${this.price}`);
+            },
+        };
+        //is same as
+        let product3_new = {
+            company: 'Mango',
+            itemName: 'Cotton stripped t-shirt',
+            displayPrice() {
+                console.log(`The price is ${this.price}`);
+            }
+        };
+
+    </script>
+</body>
+</html>

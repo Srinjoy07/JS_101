@@ -1,0 +1,18 @@
+The difference between JS and JSON key-value pait is ...here both KEY and VALUE both are inside COLON 
+
+JSON object:
+{
+    "firstName" : "Sam",
+    "lastName" : "Smith",
+}  //JavaScript Object Notation
+
+//Why we need JSON
+JSON is used to send data between a server and a web application. It is a lightweight data interchange
+Strings are easy to transport over network. 
+Common in network calls and data storage.
+
+JSON is data format,JS is a data structure.
+
+//USE case:
+JSON.parse()--> converts JS to JSON
+JSON.stringify()--> converts JSON to JS

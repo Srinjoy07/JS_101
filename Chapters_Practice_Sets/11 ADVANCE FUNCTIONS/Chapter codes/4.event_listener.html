@@ -1,0 +1,32 @@
+<!-- 
+1.Event: Occurances like clicks, mouse movement, keyboard input(e.g birthday,functions)
+2.Using querySelector to attach listeners.
+3.Multiple Listeners: You can add more than 1
+4.removeEventListener('event','functionVariable')
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+</head>
+<body>
+    <button id="myButton">Click me!</button>
+    <script>
+      let buttonElement = document.querySelector('#myButton');
+      let behaviour = event => console.log("I am clicked");  //making a anonymous function set in a variable
+      buttonElement.addEventListener('click', behaviour);
+
+
+      //adding more event listener
+      let printDate = event => console.log(new Date());
+      buttonElement.addEventListener('click',printDate);
+
+
+      //removing eventListener
+      buttonElement.removeEventListener('click', behaviour); //have to mention the eventListener with a reference!!
+    </script>
+</body>
+</html>

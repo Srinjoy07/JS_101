@@ -1,0 +1,41 @@
+<!-- Groups multiple values together  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        // Define an object
+        let product = {
+            //properties of object 
+            company: 'Mango',
+            price: 1000,
+            'item-name': 'T-shirt',
+            color: 'red',  //whenever we need to add property in Git the history is set to who added the last element in which section...so generally we need to add comma in last property as well
+        };
+        console.log(typeof product);
+        console.log(product);
+        
+
+        //changing a property
+        product.price = 500;
+
+        //deletes a property in object
+        delete product.company;
+        console.log(product);
+
+        //accessing properties
+        console.log(product.company); //dot notation
+        console.log(product['price']);  //if the name of property is using -./ or any sign then we can't use . ,then we can use Bracket notation
+
+        //trick for BRACKET notation
+        let propertyName = 'item-name';
+        console.log(product[propertyName]); //this is the trick to use bracket notation with variable name...
+
+    </script>
+</body>
+</html>
